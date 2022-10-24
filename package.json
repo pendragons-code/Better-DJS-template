@@ -4,7 +4,7 @@
   "description": "A template that is written for Discord.js v14",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "node . >> log.txt 2>> errorlog.txt"
   },
   "author": "Pendragon's code",
   "license": "ISC",
