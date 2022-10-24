@@ -1,0 +1,13 @@
+const env = require("dotenv").config()
+const { AutoTasker } = require("./Loaders/Autotasks.js")
+const { commander } = require("./Loaders/Commands.js")
+const { structurer } = require("./Loaders/Structures")
+const { eventer } = require("./Loaders/events")
+const { Jasbot } = require("./bot.js")
+AutoTasker()
+commander()
+structurer()
+eventer()
+console.log(`Currently hanging out on ${process.pid}!`)
+Jasbot.login(process.env.token)
+process.traceDeprecation = true

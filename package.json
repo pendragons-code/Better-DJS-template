@@ -1,0 +1,17 @@
+{
+  "name": "djs-template-better",
+  "version": "1.0.0",
+  "description": "A template that is written for Discord.js v14",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pendragon's code",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "os-utils": "^0.0.14"
+  }
+}
