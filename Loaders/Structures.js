@@ -8,7 +8,7 @@ function structurer(){
 		for(const file of structure){
 			const structure = require(`../src/structure/${dirs}/${file}`)
 			console.log(`Loading structure component: ${file} from ${dirs}`)
-			Jasbot.structure.set(structure.name.toLowerCase(), structure)
+			Jasbot.structures.set(structure.name.toLowerCase(), structure)
 		}
 	})
 	console.log(`${decorpiece} End of Stuctural components ${decorpiece2}`)
