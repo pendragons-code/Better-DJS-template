@@ -7,7 +7,7 @@ module.exports = async (Jasbot, messageCreate) =>{
 	const command = args.shift().toLowerCase()
 	const cmd = Jasbot.commands.get(command) || Jasbot.command.find(cmd => cmd.aliases && cmd.aliases.includes(command))
 	if(!cmd) return
-	let tokensec = Jasbot.structure.get("tokensec")
+	let tokensec = Jasbot.structures.get("tokensec")
 	tokensec.execute(Jasbot, messageCreate, args, mainprefix)
 	cmd.execute(Jasbot, messageCreate, args, mainprefix)
 	console.log(`${messageCreate.author.username} ran ${cmd.name} in ${messageCreate.guild.id}`).catch(() => {
