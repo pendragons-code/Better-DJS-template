@@ -22,5 +22,5 @@ const Jasbot = new Client({
 });
 
 Jasbot.commands = new Collection()
-Jasbot.structure = new Collection()
+Jasbot.structures = new Collection()
 module.exports = { Jasbot: Jasbot }
