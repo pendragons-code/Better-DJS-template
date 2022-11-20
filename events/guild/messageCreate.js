@@ -7,6 +7,10 @@ module.exports = async (Jasbot, messageCreate) =>{
 	const command = args.shift().toLowerCase()
 	const cmd = Jasbot.commands.get(command) || Jasbot.command.find(cmd => cmd.aliases && cmd.aliases.includes(command))
 	if(!cmd) return
+	let maxargs = cmd.maxargs
+	let minperms = cmd.minperms
+	if(maxargs) for(let i = 0; i < maxargs; i  ++) if(args[i+1]) return messageCreate.channel.send(reject.user.args.toomany)
+	if(minperms) for(let i = 0; i < minperms.length; i ++) if(!messageCreate.member.permissions.has(minperms[i])) return messageCreate.channel.send(reject.MissingPerms)
 	let tokensec = Jasbot.structures.get("tokensec")
 	tokensec.execute(Jasbot, messageCreate, args, mainprefix)
 	cmd.execute(Jasbot, messageCreate, args, mainprefix)
