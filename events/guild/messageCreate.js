@@ -9,8 +9,8 @@ module.exports = async (Jasbot, messageCreate) =>{
 	if(!cmd) return
 	let maxargs = cmd.maxargs
 	let minperms = cmd.minperms
-	if(maxargs) for(let i = 0; i < maxargs; i  ++) if(args[i+1]) return messageCreate.channel.send(reject.user.args.toomany)
-	if(minperms) for(let i = 0; i < minperms.length; i ++) if(!messageCreate.member.permissions.has(minperms[i])) return messageCreate.channel.send(reject.MissingPerms)
+	if(maxargs) for(let i = 0; i < maxargs; i  ++) if(args[i+1]) return messageCreate.channel.send("Too many arguments were provided!!!!")
+	if(minperms) for(let i = 0; i < minperms.length; i ++) if(!messageCreate.member.permissions.has(minperms[i])) return messageCreate.channel.send(`You are missing permissions! Come back when you have ${minperms[i].slice(26)}`)
 	let tokensec = Jasbot.structures.get("tokensec")
 	tokensec.execute(Jasbot, messageCreate, args, mainprefix)
 	cmd.execute(Jasbot, messageCreate, args, mainprefix)
