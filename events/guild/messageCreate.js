@@ -10,7 +10,7 @@ module.exports = async (Jasbot, messageCreate) =>{
 	let maxargs = cmd.maxargs
 	if(maxargs) for(let i = 0; i < maxargs; i  ++) if(args[i+1]) return messageCreate.channel.send("Too many args!")
 	let minperms = cmd.minperms
-	if(minperms) for(let i = 0; i < minperms.length; i++) if(messageCreate.member.permissions.has(minperms[i])){
+	if(minperms) for(let i = 0; i < minperms.length; i++) if(!messageCreate.member.permissions.has(minperms[i])){
 		const PermList = require("../../permissions.json")
 		let query = minperms[i]
 		if(Array.isArray(minperms[i])) query = minperms[i][0]
