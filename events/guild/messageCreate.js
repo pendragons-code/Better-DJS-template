@@ -1,5 +1,6 @@
 module.exports = async (Jasbot, messageCreate) =>{
 	const { prefix, botid } = require("../../config.json")
+	const { PermissionsBitField } = require("discord.js")
 	if(messageCreate.author.bot || messageCreate.channel.type == "dm") return
 	let mainprefix = messageCreate.content.includes(prefix) ? prefix : `<@${botid}>`
 	if(messageCreate.content.indexOf(prefix) !==0) return
@@ -10,7 +11,7 @@ module.exports = async (Jasbot, messageCreate) =>{
 	let maxargs = cmd.maxargs
 	let minperms = cmd.minperms
 	if(maxargs) for(let i = 0; i < maxargs; i++) if(args[i+1]) return messageCreate.channel.send("Too many arguments were provided!!!!")
-	if(minperms) for(let i = 0; i < minperms.length; i++)if(messageCreate.member.permissions.has(minperms[i])) return messageCreate.channel.send(`You are missing permissions! Come back when you have ${Permissionbyname}`)
+	if(minperms) for(let i = 0; i < minperms.length; i++)if(messageCreate.member.permissions.has(PermissionsBitField.Flags[minperms[i]])) return messageCreate.channel.send(`You are missing permissions! Come back when you have \`${minperms[i]}\``)
 	let tokensec = Jasbot.structures.get("tokensec")
 	tokensec.execute(Jasbot, messageCreate, args, mainprefix)
 	cmd.execute(Jasbot, messageCreate, args, mainprefix).catch(() => {
