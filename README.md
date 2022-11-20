@@ -4,6 +4,7 @@ Will be uploaded soon. Jasbot (another project) will likely shift to this templa
       
       
 This repository has not yet been fully tested!      
+The method for getting permissions is really dumb and therefor I advice you do not do it at all!
 
 
 # How it works: 
