@@ -5,7 +5,7 @@ module.exports = async (Jasbot, messageCreate) =>{
 	if(messageCreate.content.indexOf(prefix) !==0) return
 	const args = messageCreate.content.slice(mainprefix.length).trim().split(/ +/g)
 	const command = args.shift().toLowerCase()
-	const cmd = Jasbot.commands.get(command) || Jasbot.command.find(cmd => cmd.aliases && cmd.aliases.includes(command))
+	const cmd = Jasbot.commands.get(command) || Jasbot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(command))
 	if(!cmd) return
 	let maxargs = cmd.maxargs
 	if(maxargs) for(let i = 0; i < maxargs; i  ++) if(args[i+1]) return messageCreate.channel.send("Too many args!")
