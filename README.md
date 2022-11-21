@@ -9,7 +9,7 @@ The method for getting permissions is really dumb and therefor I advice you do n
 
 # How it works: 
 It is basically the same but some people complained that the handlers in one `bot.js` file makes it really messy and i agree to some extent.      
-Adding autotasks also allow the bot to execute tasks upon called like this: `Jasbot.<taskname>`       
+Adding autotasks also allow the bot to execute tasks upon called like this: `bot.<taskname>`       
     
 when the bot is online and if the `.env` file is fully filled up it should look like this:        
 ```
