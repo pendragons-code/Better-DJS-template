@@ -1,4 +1,4 @@
-const { Jasbot } = require("../bot.js")
+const { bot } = require("../bot.js")
 const { decorpiece, decorpiece2 } = require("./Commands.js")
 const fs = require("fs")
 function structurer(){
@@ -8,7 +8,7 @@ function structurer(){
 		for(const file of structure){
 			const structure = require(`../src/structure/${dirs}/${file}`)
 			console.log(`Loading structure component: ${file} from ${dirs}`)
-			Jasbot.structures.set(structure.name.toLowerCase(), structure)
+			bot.structures.set(structure.name.toLowerCase(), structure)
 		}
 	})
 	console.log(`${decorpiece} End of Stuctural components ${decorpiece2}`)

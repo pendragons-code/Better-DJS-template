@@ -1,4 +1,4 @@
-module.exports = async (Jasbot) =>{
+module.exports = async (bot) =>{
     console.log("Yes")
-    Jasbot.webserver
+    bot.webserver
 }

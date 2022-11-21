@@ -1,5 +1,5 @@
 const fs = require("fs")
-const { Jasbot } = require("../bot.js")
+const { bot } = require("../bot.js")
 let decorpiece = "-=-=-=-=-=-="
 let decorpiece2 = "=-=-=-=-=-=-"
 function commander(){
@@ -9,7 +9,7 @@ function commander(){
 		for(const file of commands){
 			const command = require(`../src/commands/${dirs}/${file}`)
 			console.log(`Loading command: ${file} from ${dirs} succeeded`)
-			Jasbot.commands.set(command.name.toLowerCase(), command)
+			bot.commands.set(command.name.toLowerCase(), command)
 		}
 	})
 	console.log(`${decorpiece} End of commands ${decorpiece2}`)

@@ -1,5 +1,5 @@
 const fs = require("fs")
-const { Jasbot } = require("../bot.js")
+const { bot } = require("../bot.js")
 const { decorpiece, decorpiece2 } = require("./Commands.js")
 function eventer(){
 	console.log(`${decorpiece} Events! ${decorpiece2}`)
@@ -8,7 +8,7 @@ function eventer(){
 		for(const file of events){
 			const event = require(`../events/${dirs}/${file}`)
 			console.log(`Loading event: ${file} from ${dirs} succeeded!`)
-			Jasbot.on(file.split(".")[0], event.bind(null, Jasbot))
+			bot.on(file.split(".")[0], event.bind(null, bot))
 		}
 	})
 	console.log(`${decorpiece} End of loading events! ${decorpiece2}`)

@@ -1,11 +1,12 @@
-const { EmbedBuilder } = require("discord.js")
+const { EmbedBuilder, PermissionsBitField } = require("discord.js")
 module.exports = {
 	name: "help",
 	aliases: ["commands", "-h"],
 	category: "core",
 	utilisation: "help <category/command name>",
 	desc: "Provides details and list of commands!",
-	minperms: ["KickMembers"],
+	//minperms: [PermissionsBitField.Flags.KickMembers, [PermissionsBitField.Flags.BanMembers, PermissionsBitField.Flags.KickMembers]],
+	minperms: [[PermissionsBitField.Flags.BanMembers, PermissionsBitField.Flags.KickMembers]],
 	async execute(bot, messageCreate, args, prefix){
 		const commander = bot.commands.filter(x => x.showHelp !== false)
 		let cater = bot.commands.map(u => u.category)

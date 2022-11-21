@@ -1,4 +1,4 @@
-const { Jasbot } = require("../bot.js")
+const { bot } = require("../bot.js")
 const { decorpiece, decorpiece2 } = require("./Commands.js")
 const fs = require("fs")
 function AutoTasker(){
@@ -6,7 +6,7 @@ function AutoTasker(){
 	fs.readdirSync("./src/AutoTask").forEach(dirs => {
 		const autotask = fs.readdirSync(`./src/AutoTask/${dirs}`).filter(file => file.endsWith(".js"))
 		for(const file of autotask){
-			require(`../src/AutoTask/${dirs}/${file}`)(Jasbot)
+			require(`../src/AutoTask/${dirs}/${file}`)(bot)
 			console.log(`Loading Task: ${file} from ${dirs} succeeded`)
 		}
 	})

@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, Collection } = require("discord.js")
-const Jasbot = new Client({
+const bot = new Client({
 	intents: [
 		GatewayIntentBits.DirectMessages,
 		GatewayIntentBits.Guilds,
@@ -21,6 +21,6 @@ const Jasbot = new Client({
 	]
 });
 
-Jasbot.commands = new Collection()
-Jasbot.structures = new Collection()
-module.exports = { Jasbot: Jasbot }
+bot.commands = new Collection()
+bot.structures = new Collection()
+module.exports = { bot }

@@ -1,4 +1,4 @@
-module.exports = async (Jasbot) => {
+module.exports = async (bot) => {
 	const express = require("express")
 	const env = require("dotenv").config
 	const password = process.env.password
@@ -7,7 +7,7 @@ module.exports = async (Jasbot) => {
 	const port = process.env.port
 	app.get("/", async (req, res) => {
 		if(req.query.key != password || ! req.query.key) return res.send("YOU CANNOT ACCESS THIS!")
-		let desc = `Serving ${Jasbot.guilds.cache.size} guilds and ${Jasbot.users.cache.size} users.`
+		let desc = `Serving ${bot.guilds.cache.size} guilds and ${bot.users.cache.size} users.`
 		res.send(desc)
 	})
 
