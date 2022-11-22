@@ -25,8 +25,8 @@ module.exports = async (bot, messageCreate) =>{
 	}
 	let tokensec = bot.structures.get("tokensec")
 	tokensec.execute(bot, messageCreate, args, mainprefix)
-	cmd.execute(bot, messageCreate, args, mainprefix).catch(() => {
-		console.error()
+	cmd.execute(bot, messageCreate, args, mainprefix).catch((error) => {
+		console.error("error", error)
 		console.log(messageCreate.content)
 		return messageCreate.channel.send("Something went wrong!")
 	})
