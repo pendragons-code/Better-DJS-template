@@ -1,6 +1,6 @@
 # Better-DJS-template
-A template that is better suited for discord.js v14
-Will be updated soon!
+A template that is better suited for discord.js v14                   
+Will be updated soon! (Just noticed some major an minor errors)
      
 
 
