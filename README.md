@@ -1,10 +1,7 @@
 # Better-DJS-template
-A template that is better suited for discord.js v14   
-Will be uploaded soon. Jasbot (another project) will likely shift to this template too.   
-      
-      
-This repository has not yet been fully tested!      
-The method for getting permissions is really dumb and therefor I advice you do not do it at all!
+A template that is better suited for discord.js v14
+Will be updated soon!
+     
 
 
 # How it works: 
