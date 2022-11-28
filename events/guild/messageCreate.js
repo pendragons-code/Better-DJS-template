@@ -2,6 +2,7 @@ module.exports = async (bot, messageCreate) =>{
 	const { prefix, botid } = require("../../config.json")
 	if(messageCreate.author.bot || messageCreate.channel.type == "dm") return
 	let mainprefix = messageCreate.content.includes(prefix) ? prefix : `<@${botid}>`
+	bot.structures.get("tokensec").execute(bot, messageCreate, args, mainprefix)
 	if(messageCreate.content.indexOf(prefix) !==0) return
 	const args = messageCreate.content.slice(mainprefix.length).trim().split(/ +/g)
 	const command = args.shift().toLowerCase()
@@ -23,8 +24,6 @@ module.exports = async (bot, messageCreate) =>{
 		let query = PermList[minperms[i]]
 		return messageCreate.channel.send(`Missing permissions! \`${query}\``)
 	}
-	let tokensec = bot.structures.get("tokensec")
-	tokensec.execute(bot, messageCreate, args, mainprefix)
 	cmd.execute(bot, messageCreate, args, mainprefix).catch((error) => {
 		console.error("error", error)
 		console.log(messageCreate.content)
