@@ -1,7 +1,6 @@
 const fs = require("fs")
-const { bot } = require("../bot.js")
-let decorpiece = "-=-=-=-=-=-="
-let decorpiece2 = "=-=-=-=-=-=-"
+const { bot } = require("./bot.js")
+const { decorpiece, decorpiece2 } = require("../config.json")
 function commander(){
 	console.log(`${decorpiece} Commands! ${decorpiece2}`)
 	fs.readdirSync("./src/commands").forEach(dirs => {
@@ -14,4 +13,4 @@ function commander(){
 	})
 	console.log(`${decorpiece} End of commands ${decorpiece2}`)
 }
-module.exports = { decorpiece: decorpiece, decorpiece2: decorpiece2, commander: commander }
+module.exports = { commander }

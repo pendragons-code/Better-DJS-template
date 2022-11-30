@@ -1,5 +1,5 @@
-const { bot } = require("../bot.js")
-const { decorpiece, decorpiece2 } = require("./Commands.js")
+const { bot } = require("./bot.js")
+const { decorpiece, decorpiece2 } = require("../config.json")
 const fs = require("fs")
 function structurer(){
 	console.log(`${decorpiece} Stuctural components ${decorpiece2}`)
@@ -13,4 +13,4 @@ function structurer(){
 	})
 	console.log(`${decorpiece} End of Stuctural components ${decorpiece2}`)
 }
-module.exports = { structurer: structurer }
+module.exports = { structurer }

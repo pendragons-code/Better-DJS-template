@@ -1,4 +1,7 @@
 const env = require("dotenv").config()
+if(!process.env.port) return console.log("Missing value for `port` in .env!")
+if(!process.env.password) return console.log("Missing value for `password` in .env!")
+if(!process.env.token) return console.log("Missing value for `token` in .env!")
 const { AutoTasker } = require("./Loaders/Autotasks.js")
 const { commander } = require("./Loaders/Commands.js")
 const { structurer } = require("./Loaders/Structures")

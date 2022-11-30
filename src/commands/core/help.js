@@ -5,8 +5,6 @@ module.exports = {
 	category: "core",
 	utilisation: "help <category/command name>",
 	desc: "Provides details and list of commands!",
-	//minperms: [PermissionsBitField.Flags.KickMembers, [PermissionsBitField.Flags.BanMembers, PermissionsBitField.Flags.KickMembers]],
-	minperms: [[PermissionsBitField.Flags.BanMembers, PermissionsBitField.Flags.KickMembers]],
 	async execute(bot, messageCreate, args, prefix){
 		const commander = bot.commands.filter(x => x.showHelp !== false)
 		let cater = bot.commands.map(u => u.category)

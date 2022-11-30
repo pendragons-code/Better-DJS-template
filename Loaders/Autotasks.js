@@ -1,5 +1,5 @@
-const { bot } = require("../bot.js")
-const { decorpiece, decorpiece2 } = require("./Commands.js")
+const { bot } = require("./bot.js")
+const { decorpiece, decorpiece2 } = require("../config.json")
 const fs = require("fs")
 function AutoTasker(){
 	console.log(`${decorpiece} Automatic Tasks ${decorpiece2}`)
@@ -12,4 +12,4 @@ function AutoTasker(){
 	})
 	console.log(`${decorpiece} End of Automatic Tasks ${decorpiece2}`)
 } 
-module.exports = { AutoTasker: AutoTasker }
+module.exports = { AutoTasker }
