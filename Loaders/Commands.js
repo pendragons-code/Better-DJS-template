@@ -1,7 +1,6 @@
 const fs = require("fs")
-const { Jasbot } = require("../bot.js")
-let decorpiece = "-=-=-=-=-=-="
-let decorpiece2 = "=-=-=-=-=-=-"
+const { bot } = require("./bot.js")
+const { decorpiece, decorpiece2 } = require("../config.json")
 function commander(){
 	console.log(`${decorpiece} Commands! ${decorpiece2}`)
 	fs.readdirSync("./src/commands").forEach(dirs => {
@@ -9,9 +8,9 @@ function commander(){
 		for(const file of commands){
 			const command = require(`../src/commands/${dirs}/${file}`)
 			console.log(`Loading command: ${file} from ${dirs} succeeded`)
-			Jasbot.commands.set(command.name.toLowerCase(), command)
+			bot.commands.set(command.name.toLowerCase(), command)
 		}
 	})
 	console.log(`${decorpiece} End of commands ${decorpiece2}`)
 }
-module.exports = { decorpiece: decorpiece, decorpiece2: decorpiece2, commander: commander }
+module.exports = { commander }
