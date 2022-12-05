@@ -77,3 +77,9 @@ if(!messageCreate.member.permissions.has([PermissionsBitField.Flags.KickMembers,
 // There is also a part that takes items from `permissions.json` to convert the BitFields (53bit) to Permission names.
 // There are better ways to do it, but there are a few NPM packages the break as most of them are made for older versions. While I'm not sure why this makes it break, It often returns wrong permissions or fail to convert it at all! If you find a working method better than what I have here, PLEASE DO SEND A PR!
 ```
+
+
+
+
+# ESM
+May implment esm in the future.
