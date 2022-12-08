@@ -3,7 +3,7 @@ module.exports = async (bot, messageCreate) =>{
 	if(messageCreate.author.bot || messageCreate.channel.type == "dm") return
 	let mainprefix = messageCreate.content.includes(prefix) ? prefix : `<@${botid}>`
 	bot.structures.get("tokensec").execute(bot, messageCreate, args, mainprefix)
-	if(messageCreate.content.indexOf(prefix) !==0) return
+	if(messageCreate.content.indexOf(mainprefix) !==0) return
 	const args = messageCreate.content.slice(mainprefix.length).trim().split(/ +/g)
 	const command = args.shift().toLowerCase()
 	const cmd = bot.commands.get(command) || bot.command.find(cmd => cmd.aliases && cmd.aliases.includes(command))
