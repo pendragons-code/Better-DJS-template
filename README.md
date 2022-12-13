@@ -1,3 +1,23 @@
+# A WHOLE REWRITE:
+Yup slash commands
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Better-DJS-template
 A template that is better suited for discord.js v14                   
 Fixed minor errors, new features will be added soon!
