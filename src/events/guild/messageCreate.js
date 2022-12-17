@@ -9,7 +9,7 @@ module.exports = async (bot, messageCreate) =>{
 	const cmd = bot.commands.get(command) || bot.command.find(cmd => cmd.aliases && cmd.aliases.includes(command))
 	if(!cmd) return
 	let maxargs = cmd.maxargs
-	if(maxargs) for(let i = 0; i < maxargs; i  ++) if(args[i+1]) return messageCreate.channel.send("Too many args!")
+	if(maxargs) if(args[maxargs + 1]) return messageCreate.channel.send("Too many args!")
 	let minperms = cmd.minperms
 	if(minperms) for(let i = 0; i < minperms.length; i++) if(!messageCreate.member.permissions.has(minperms[i])){
 		const PermList = require("../../assets/permissions.json")
