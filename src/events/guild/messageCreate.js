@@ -25,7 +25,7 @@ module.exports = async (bot, messageCreate) =>{
 		return messageCreate.channel.send(`Missing permissions! \`${query}\``)
 	}
 	cmd.execute(bot, messageCreate, args, mainprefix).catch((error) => {
-		console.error("error", error)
+		console.error(error)
 		console.log(messageCreate.content)
 		return messageCreate.channel.send("Something went wrong!")
 	})
